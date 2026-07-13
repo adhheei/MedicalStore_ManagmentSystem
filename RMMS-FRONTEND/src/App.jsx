@@ -1,7 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Login from "./pages/Auth/Login";
-import Inventory from "./pages/Pharmacist/Inventory";
+import Inventory from "./pages/Pharmacist/Inventory"
+import AdminInventory from "./pages/Admin/AdminInventory";;
 
 // --- Temporary Mock Layouts ---
 const AdminLayout = () => (
@@ -39,6 +40,7 @@ function App() {
       {/* Admin Protected Routes */}
       <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
         <Route path="/admin/dashboard" element={<AdminLayout />} />
+        <Route path="/admin/inventory" element={<AdminInventory />} />
       </Route>
 
       {/* Default Catch-all */}
